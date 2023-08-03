@@ -26,6 +26,7 @@ traits <- function(x, y){
   Trait <- Trait[!duplicated(Trait[,1]),]
   Trait <- Trait[ order(Trait[,1]), ]
   
+  #saves the data frame as a csv file
   write.csv(Trait, paste0(y, "Traits List.csv"), row.names = FALSE)
 }
 traits(x, y)
