@@ -10,7 +10,7 @@ z <- [Directory of the file where the list of traits are]
 traitSummary <- function(x, y, z){
   d <- dir(x, pattern = ".csv")
   
-  traitsList <- read.csv(z, col_names = FALSE)
+  traitsList <- read.csv(paste0(z, ".csv"))
   
   #Setup the data frame where the summary will be stored
   #Populate all fields with "FALSE" value
@@ -40,7 +40,7 @@ traitSummary <- function(x, y, z){
       for (l in 1:ncol(Data)){
         if (traitsList[k,1] == names(Data)[l]){
           nullRemoved <- na.omit(Data[,l])
-          traits[i,2+k] <- nullRemoved
+          traits[i,2+k] <- length(nullRemoved)
         }
       }
     }

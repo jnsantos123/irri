@@ -9,19 +9,23 @@ y <- [Directory where the list of traits will be stored]
 traits <- function(x, y){
   d <- dir(x, pattern = ".csv")
   
-  Traits <- matrix(nrow = 0, ncol = 1)
-  Traits <- data.frame(Traits, row.names = NULL)
+  #Create a dummy data frame where the slist will be stored
+  Trait <- matrix(nrow = 0, ncol = 2)
+  Trait <- data.frame(Trait, row.names = NULL)
   
   for (i in 1:length(d)){
     Data <- read.csv(paste0(x, d[i]))
     
     for (j in 1:length(Data)){
-      Traits[nrow(Traits)+1,1] <- names(Data)[j]
+      Trait[nrow(Trait)+1,1] <- names(Data)[j]
     }
   }
   
-  Traits <- Traits[!duplicated(Traits[,1]),]
-
-  write.csv(Traits, paste0(y, "Traits List.csv"))
+  #Remove duplicated traits and sort the traits alphabetically
+  names(Trait)[1] <- "Traits"
+  Trait <- Trait[!duplicated(Trait[,1]),]
+  Trait <- Trait[ order(Trait[,1]), ]
+  
+  write.csv(Trait, paste0(y, "Traits List.csv"), row.names = FALSE)
 }
 traits(x, y)
