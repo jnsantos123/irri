@@ -11,13 +11,13 @@ removes all special characters and converts all variable names to uppercase.
 Merged data are written on the specified directory following the naming
 convention: "Occurrence_name__Occurrence_code"
 
-Traits_List
+Traits_List Function
 [Description]
 Lists all traits that appeared, at least once, on a group of experiments. This
 function requires 2 inputs (a directory where the merged data are stored and
 another where the list of traits will be stored). 
 
-Traits_Summary
+Traits_Summary Function
 [Description]
 Creates a summary (count data) for each trait for all experiment data. This
 function requires 3 inputs (a directory where the merged data are stored,
