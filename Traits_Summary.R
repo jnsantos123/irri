@@ -1,3 +1,8 @@
+#install and load all necessary packages
+install.packages("readr")
+library(readr)
+
+#Define the required parameters
 x <- [Directory where merged data are stored]
 y <- [Directory where trait summary will be stored]
 z <- [Directory of the file where the list of traits are]
