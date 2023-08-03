@@ -31,7 +31,7 @@ Merge <- function(x, y){
       }
       #saves the data into a csv file
       #follows a "occurrence_name"__"occurrence_code" format
-      write.csv(pData, paste0(y, pData$OCCURRENCENAME[1], "__", pData$OCCURRENECODE[1], ".csv"))
+      write.csv(pData, paste0(y, pData$OCCURRENCENAME[1], "__", pData$OCCURRENCECODE[1], ".csv"))
     }
   }
 }
