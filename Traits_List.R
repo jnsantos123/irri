@@ -21,7 +21,7 @@ traits <- function(x, y){
   }
   
   Traits <- Traits[!duplicated(Traits[,1]),]
-  
+
   write.csv(Traits, paste0(y, "Traits List.csv"))
 }
 traits(x, y)
