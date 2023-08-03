@@ -14,9 +14,9 @@ traitSummary <- function(x, y, z){
   
   #Setup the data frame where the summary will be stored
   #Populate all fields with "FALSE" value
-  Occurrence_Code <- FALSE
-  Occurrence_Name <- FALSE
-  traits <- data.frame(Occurrence_Code, Occurrence_Name)
+  OCCURRENCECODE <- FALSE
+  OCCURRENCENAME <- FALSE
+  traits <- data.frame(OCCURRENCENAME, OCCURRENCECODE)
   
   for (i in 1:nrow(traitsList)){
     traits[,2+i] <- FALSE
@@ -27,8 +27,8 @@ traitSummary <- function(x, y, z){
   #Done per merged data file
   for (i in 1:length(d)){
     Data <- read.csv(paste0(x, d[i]))
-    traits[i,1] <- Data$occurrence_code[1]
-    traits[i,2] <- Data$occurrence_name[1]
+    traits[i,1] <- Data$OCCURRENCENAME[1]
+    traits[i,2] <- Data$OCCURRENCECODE[1]
     
     for (j in 1:nrow(traitsList)){
       traits[i,2+j] <- FALSE
