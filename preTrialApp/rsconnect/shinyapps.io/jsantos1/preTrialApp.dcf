@@ -1,0 +1,12 @@
+name: preTrialApp
+title: preTrialApp
+username: jsantos1
+account: jsantos1
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 9629195
+bundleId: 7595830
+url: https://jsantos1.shinyapps.io/preTrialApp/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
