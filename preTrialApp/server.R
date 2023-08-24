@@ -472,8 +472,39 @@ server <- function(input, output, session) {
           }
         }
       }
-      names(table1) <- NULL
-      names(table2) <- NULL
+      
+      RN1 <- c()
+      CN1 <- c()
+      a <- 1
+      b <- 1
+      for(i in 1:ncol(table1)){
+        CN1[i] <- paste0("col ", a)
+        a <- a + 1
+      }
+      for(i in 1:nrow(table1)){
+        RN1[i] <- paste0("row ", b)
+        b <- b + 1
+      }
+      
+      names(table1) <- CN1
+      rownames(table1) <- RN1
+      
+      RN2 <- c()
+      CN2 <- c()
+      c <- 1
+      d <- 1
+      for(i in 1:ncol(table2)){
+        CN2[i] <- paste0("col ", c)
+        c <- c + 1
+      }
+      for(i in 1:nrow(table2)){
+        RN2[i] <- paste0("row ", d)
+        d <- d + 1
+      }
+      
+      names(table2) <- CN2
+      rownames(table2) <- RN2
+      
       if (isolate(input$pOrder == "Row-Serpentine")){
         table2
       } else if (isolate(input$pOrder == "Left-to-Right")){
