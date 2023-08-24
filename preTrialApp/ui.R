@@ -6,12 +6,23 @@
 #
 #    http://shiny.rstudio.com/
 #
+# Install packages
+# shiny package version 1.7.4.1
+# shinydashboard version 0.7.2
+# DT version 0.28
+# dashboardthemes version 1.1.6
+
+install.packages("shiny")
+install.packages("shinydashboard")
+install.packages("DT")
+install.packages("dashboardthemes")
 
 library(shiny)
 library(shinydashboard)
 library(DT)
 library(dashboardthemes)
 
+# Initialize a dashboard page
 ui <- dashboardPage(
   dashboardHeader(title = "Dashboard"),
   dashboardSidebar(
@@ -240,12 +251,12 @@ ui <- dashboardPage(
               mainPanel(
                 conditionalPanel(
                   condition = "input.design == 'Partially Replicated'",
-                  
+                  tableOutput("approx1"),
                   dataTableOutput("Layout1"), style = "height:500px; overflow-y: scroll;overflow-x: scroll;"
                 ),
                 conditionalPanel(
                   condition = "input.design == 'Alpha-Lattice'",
-                  
+                  tableOutput("approx2"),
                   dataTableOutput("Layout2"), style = "height:500px; overflow-y: scroll;overflow-x: scroll;"
                 )
               )
